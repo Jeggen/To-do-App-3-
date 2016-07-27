@@ -95,7 +95,6 @@ function showError(message) {
 
 function submitTodo(event) {
   event.preventDefault();
-  resetErrors();
   createTodo($("#todo_title").val());
   $("#todo_title").val(null);
   updateCounters();
@@ -122,11 +121,6 @@ function deleteTodo(todoId) {
     .done(function(data) {
       updateCounters();
     });
-}
-
-function resetErrors() {
-  $("#error_message").remove();
-  $("#todo_title").removeClass("error");
 }
 
 $(document).ready(function() {
